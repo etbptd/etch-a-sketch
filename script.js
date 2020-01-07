@@ -1,17 +1,19 @@
 const container = document.getElementById("sketch-container");
 
+let gridTotal = prompt("Enter the number of cells you want", '5');
+
 function makeRows(rows, columns) {
+
 	container.style.setProperty('--grid-rows', rows);
 	container.style.setProperty('--grid-cols', columns);
 
 	for (i = 0; i < (rows * columns); i++) {
 		let cell = document.createElement('div');
-		// cell.innerText = (i + 1);
 		container.appendChild(cell).className = 'grid-item';
 	};
 };
 
-makeRows(10, 10);
+makeRows(gridTotal, gridTotal);
 
 function colorChange(e) {
 	this.classList.add('sketched');
